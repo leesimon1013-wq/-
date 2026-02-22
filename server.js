@@ -11,12 +11,9 @@ const io = new Server(server, {
 });
 const path = require('path');
 
-// Serve static files from the current directory
-app.use(express.static(path.join(__dirname, '')));
-
-// Fallback for index.html
+// Simple health check endpoint for the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.send('RTS Multiplayer Server is running smoothly! 🚀');
 });
 
 // --- Multiplayer Lobby State ---
